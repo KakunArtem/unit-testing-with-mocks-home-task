@@ -91,7 +91,7 @@ describe('UserDataHandler', () => {
         });
 
         it('should throw an error if no search parameters are provided', () => {
-            expect(() => userDataHandler.findUsers()).to.throw('No search parameters provided!');
+            expect(() => userDataHandler.findUsers()).to.throw('No search parameters provoded!');
         });
 
         it('should throw an error if no users are loaded', () => {
