@@ -1,11 +1,11 @@
-const axios = require('axios').default
+import axios from "axios";
 
 /**
  *
  * A class for interracting with user data
  * @class UserDataHandler
  */
-class UserDataHandler {
+export default class UserDataHandler {
   /**
    *Creates an instance of UserDataHandler.
    * @memberof UserDataHandler
@@ -83,5 +83,3 @@ class UserDataHandler {
     return matchingUsers
   }
 }
-
-module.exports = UserDataHandler

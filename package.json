@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "a project used for the unit testing with NodeJS home task",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "npm test",
-    "start-server": "node ./src/server/server.js",
-    "eslint": "eslint ./"
+    "test": "mocha 'tests/**/*.test.mjs'",
+    "coverage": "c8 npm test",
+    "start-server": "node src/server/server.mjs",
+    "eslint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -18,24 +22,15 @@
     "url": "https://github.com/stranger2626/unit-testing-with-mocks-home-task/issues"
   },
   "homepage": "https://github.com/stranger2626/unit-testing-with-mocks-home-task#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run eslint"
-    }
-  },
   "dependencies": {
-    "axios": "^0.19.2",
-    "express": "^4.17.1"
+    "axios": "1.7.4",
+    "express": "5.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.10.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.3.0",
-    "mocha": "^8.1.3",
-    "nyc": "^15.1.0"
+    "c8": "^10.1.3",
+    "chai": "^5.1.2",
+    "husky": "^9.1.7",
+    "mocha": "^11.0.1",
+    "nock": "^13.5.6"
   }
 }
